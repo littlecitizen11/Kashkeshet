@@ -1,0 +1,17 @@
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\bin\Debug\netcoreapp3.1\Kashkeshet.exe
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\bin\Debug\netcoreapp3.1\Kashkeshet.deps.json
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\bin\Debug\netcoreapp3.1\Kashkeshet.runtimeconfig.json
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\bin\Debug\netcoreapp3.1\Kashkeshet.runtimeconfig.dev.json
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\bin\Debug\netcoreapp3.1\Kashkeshet.dll
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\bin\Debug\netcoreapp3.1\Kashkeshet.pdb
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\obj\Debug\netcoreapp3.1\Kashkeshet.csprojAssemblyReference.cache
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\obj\Debug\netcoreapp3.1\Kashkeshet.AssemblyInfoInputs.cache
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\obj\Debug\netcoreapp3.1\Kashkeshet.AssemblyInfo.cs
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\obj\Debug\netcoreapp3.1\Kashkeshet.csproj.CoreCompileInputs.cache
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\obj\Debug\netcoreapp3.1\Kashkeshet.dll
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\obj\Debug\netcoreapp3.1\Kashkeshet.pdb
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\obj\Debug\netcoreapp3.1\Kashkeshet.genruntimeconfig.cache
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\bin\Debug\netcoreapp3.1\Common.exe
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\bin\Debug\netcoreapp3.1\Common.dll
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Code\Kashkeshet\Kashkeshet\Kashkeshet\obj\Debug\netcoreapp3.1\Kashkeshet.csproj.CopyComplete

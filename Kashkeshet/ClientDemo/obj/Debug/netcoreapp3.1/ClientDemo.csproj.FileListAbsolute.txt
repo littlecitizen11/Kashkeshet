@@ -1,0 +1,17 @@
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\Common.exe
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\ClientDemo.exe
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\ClientDemo.deps.json
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\ClientDemo.runtimeconfig.json
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\ClientDemo.runtimeconfig.dev.json
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\ClientDemo.dll
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\ClientDemo.pdb
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\Common.dll
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.AssemblyInfoInputs.cache
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.AssemblyInfo.cs
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.csproj.CoreCompileInputs.cache
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.csproj.CopyComplete
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.dll
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.pdb
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.genruntimeconfig.cache
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.csprojAssemblyReference.cache

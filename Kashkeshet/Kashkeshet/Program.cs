@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace Kashkeshet
 {
@@ -6,7 +7,8 @@ namespace Kashkeshet
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Client c = new Client();
+            c.StartClient();
         }
     }
 }

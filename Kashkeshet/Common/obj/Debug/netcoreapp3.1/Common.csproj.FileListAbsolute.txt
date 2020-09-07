@@ -1,0 +1,12 @@
+C:\Code\Kashkeshet\Kashkeshet\Common\bin\Debug\netcoreapp3.1\Common.exe
+C:\Code\Kashkeshet\Kashkeshet\Common\bin\Debug\netcoreapp3.1\Common.deps.json
+C:\Code\Kashkeshet\Kashkeshet\Common\bin\Debug\netcoreapp3.1\Common.runtimeconfig.json
+C:\Code\Kashkeshet\Kashkeshet\Common\bin\Debug\netcoreapp3.1\Common.runtimeconfig.dev.json
+C:\Code\Kashkeshet\Kashkeshet\Common\bin\Debug\netcoreapp3.1\Common.dll
+C:\Code\Kashkeshet\Kashkeshet\Common\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Code\Kashkeshet\Kashkeshet\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfoInputs.cache
+C:\Code\Kashkeshet\Kashkeshet\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfo.cs
+C:\Code\Kashkeshet\Kashkeshet\Common\obj\Debug\netcoreapp3.1\Common.csproj.CoreCompileInputs.cache
+C:\Code\Kashkeshet\Kashkeshet\Common\obj\Debug\netcoreapp3.1\Common.dll
+C:\Code\Kashkeshet\Kashkeshet\Common\obj\Debug\netcoreapp3.1\Common.pdb
+C:\Code\Kashkeshet\Kashkeshet\Common\obj\Debug\netcoreapp3.1\Common.genruntimeconfig.cache
