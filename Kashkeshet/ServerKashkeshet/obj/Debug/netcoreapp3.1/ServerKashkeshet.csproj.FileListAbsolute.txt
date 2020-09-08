@@ -6,7 +6,6 @@ C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\ServerKas
 C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\ServerKashkeshet.pdb
 C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\obj\Debug\netcoreapp3.1\ServerKashkeshet.AssemblyInfoInputs.cache
 C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\obj\Debug\netcoreapp3.1\ServerKashkeshet.AssemblyInfo.cs
-C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\obj\Debug\netcoreapp3.1\ServerKashkeshet.csproj.CoreCompileInputs.cache
 C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\obj\Debug\netcoreapp3.1\ServerKashkeshet.dll
 C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\obj\Debug\netcoreapp3.1\ServerKashkeshet.pdb
 C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\obj\Debug\netcoreapp3.1\ServerKashkeshet.genruntimeconfig.cache
@@ -15,3 +14,16 @@ C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\Common.dl
 C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\Common.pdb
 C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\obj\Debug\netcoreapp3.1\ServerKashkeshet.csprojAssemblyReference.cache
 C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\obj\Debug\netcoreapp3.1\ServerKashkeshet.csproj.CopyComplete
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\ServerKashkeshet.dll.config
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\obj\Debug\netcoreapp3.1\ServerKashkeshet.csproj.CoreCompileInputs.cache

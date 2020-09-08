@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+L2JkdeyBZhPd3rQQw67EYcdip0nd6Ifa+Yi7ub4+kFdwyPEdtuhlRSXrSuJ6RPHLkjA2hSqxecza/iwZhST0w==",
+  "dgSpecHash": "e8dhJWmU3dYLkWU1DBMzJKu5zYJ6lBpCEZEer0g7mFYnosp3Nu1Cgwe72EvoOe5l8XMpnfAhFG6OabRBUAAkfg==",
   "success": true,
   "projectFilePath": "C:\\Code\\Kashkeshet\\Kashkeshet\\Common\\Common.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

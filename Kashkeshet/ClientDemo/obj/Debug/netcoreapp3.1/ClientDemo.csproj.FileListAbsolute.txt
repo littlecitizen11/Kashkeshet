@@ -15,3 +15,10 @@ C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.dll
 C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.pdb
 C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.genruntimeconfig.cache
 C:\Code\Kashkeshet\Kashkeshet\ClientDemo\obj\Debug\netcoreapp3.1\ClientDemo.csprojAssemblyReference.cache
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\MenuBuilder.dll
+C:\Code\Kashkeshet\Kashkeshet\ClientDemo\bin\Debug\netcoreapp3.1\MenuBuilder.pdb

@@ -26,8 +26,10 @@ namespace Common
             if (arr == null)
                 return null;
             BinaryFormatter bf = new BinaryFormatter();
+            
             using (MemoryStream ms = new MemoryStream(arr))
             {
+                ms.Position=0;
                 return bf.Deserialize(ms);
             }
         }

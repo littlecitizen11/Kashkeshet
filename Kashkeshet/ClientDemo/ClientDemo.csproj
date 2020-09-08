@@ -9,4 +9,10 @@
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="MenuBuilder">
+      <HintPath>..\..\..\MenuBuilder\MenuBuilder\MenuBuilder\bin\Debug\netcoreapp3.1\MenuBuilder.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
