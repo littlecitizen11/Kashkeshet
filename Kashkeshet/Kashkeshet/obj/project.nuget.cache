@@ -1,12 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "uNZS+q4Ve2UhZRQfjWA4Fambhj+E3RWOZ56eadp+RqX4mPb+r4DZCJHTUKrePCst6bneJHsLJR+EYrjsh0G/4g==",
+  "dgSpecHash": "LleFOSQbLN2S1y3Q3ZHL/QdeLcFs517Oii18v9uMIKIEmn47mn07n5CMOJn6l71LYaqtZwIpoK3SekrsSDiwcA==",
   "success": true,
   "projectFilePath": "C:\\Code\\Kashkeshet\\Kashkeshet\\Kashkeshet\\Kashkeshet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.7.0\\system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\thelittlecitizen11\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

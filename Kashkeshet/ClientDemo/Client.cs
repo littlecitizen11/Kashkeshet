@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -40,7 +40,7 @@ namespace ClientDemo
                 Console.WriteLine(e.ToString());
             }
         }
-        public void SendTextMessage(MessageType msgType, IMessageDestination messageDestination)
+        public void SendTextMessage(MessageType msgType, IChat messageDestination)
         {
             Console.WriteLine("Enter message to send");
             string messagetosend;
@@ -108,7 +108,7 @@ namespace ClientDemo
                             menu2.Run();
 
                             //menu.ToString();
-/*                            Console.WriteLine("1 - send TXT, 2 send Image, 3 send specific ");
+*//*                            Console.WriteLine("1 - send TXT, 2 send Image, 3 send specific ");
                             int response = int.Parse(Console.ReadLine());
                             switch (response)
                             {
@@ -130,7 +130,7 @@ namespace ClientDemo
                                     SendPrivateMessage(networkStream);
                                     break;
                                 default: break;
-                            }*/
+                            }*//*
 
                         }
                         thread.Join();
@@ -162,3 +162,4 @@ namespace ClientDemo
         }
     }
 }
+*/

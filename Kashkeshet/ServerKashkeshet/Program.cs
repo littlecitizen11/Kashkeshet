@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using Serilog;
+using System;
 
 namespace ServerKashkeshet
 {
@@ -7,7 +9,16 @@ namespace ServerKashkeshet
         static void Main(string[] args)
         {
             Server s = new Server();
-            s.StartServer();
+            IConfiguration configSerilog = new ConfigurationBuilder()
+.AddJsonFile("appsettings.json", true, true)
+.Build();
+
+
+            ILogger logger= new LoggerConfiguration()
+                 .ReadFrom.Configuration(configSerilog)
+                          .CreateLogger();
+
+            s.StartServer(logger);
         }
     }
 }
