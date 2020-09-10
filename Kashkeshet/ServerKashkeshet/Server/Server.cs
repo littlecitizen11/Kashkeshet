@@ -37,9 +37,9 @@ namespace ServerKashkeshet
         {
             try
             {
-                var receivedBytes = new byte[_client.ReceiveBufferSize];
+                byte[] receivedBytes = new byte[_client.ReceiveBufferSize];
                 _client.GetStream().Read(receivedBytes, 0, receivedBytes.Length);
-                var data = (Message<User>)serializations.ByteArrayToObject(receivedBytes);
+                Message<User> data = (Message<User>)serializations.ByteArrayToObject(receivedBytes);
                 lock (_lock)
                  _connectedClients.Add(_client, data.ClientUser.UserName);
                 _chats[0].Destination = new DestinationGlobal(_connectedClients.Values.ToList());
@@ -49,15 +49,15 @@ namespace ServerKashkeshet
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+               _logger.Error(e.ToString());
             }
         }
         public void StartServer(ILogger logger)
         {
             try
             {
-                var serverInit = new ServerInitializer();
-                var server = serverInit.Initialize();
+                ServerInitializer serverInit = new ServerInitializer();
+                TcpListener server = serverInit.Initialize();
                 _logger = logger;
                 server.Start();
                 _chats.Add(new Chat(Guid.NewGuid(), new DestinationGlobal(new List<string>()),ChatTypes.Global));

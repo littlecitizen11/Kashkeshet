@@ -25,7 +25,7 @@ namespace Kashkeshet.Clients
         public void SendUser()
         {
             byte[] bytes;
-            byte[] receivedBytes = new byte[8192];
+            byte[] receivedBytes = new byte[_clientsProperties.client.ReceiveBufferSize];
             _displayer.Print("Enter Username");
             string username = Console.ReadLine();
             User user = new User(username);
@@ -37,7 +37,7 @@ namespace Kashkeshet.Clients
         public void PrintClients()
         {
             _displayer.Print("Connected Clients: ");
-            foreach (string client in _clientsProperties._clients.Where(x=>x!=_clientsProperties.User.UserName))
+            foreach (string client in _clientsProperties._clients.Where(x => x != _clientsProperties.User.UserName))
             {
                 _displayer.Print(client);
             }
@@ -53,9 +53,7 @@ namespace Kashkeshet.Clients
             IChat chat = IsChatExist(listofprivates, ChatTypes.Private);
             if (chat == null)
             {
-                //CreateNewChat(new DestinationUser(listofprivates), ChatTypes.Private);
                 chat = CreateNewChat(new DestinationUser(listofprivates), ChatTypes.Private);
-
             }
             _clientsProperties.currentChat = chat;
             SendTextMessage(MessageType.TextToDest, chat);
@@ -63,23 +61,22 @@ namespace Kashkeshet.Clients
         }
         public void SendTextMessage(MessageType msgType, IChat messageDestination)
         {
-            //Console.Clear();
+            Console.Clear();
             string messagetosend;
-            Queue<string> checker;
-            if (_clientsProperties._chatsByHistory.TryGetValue(messageDestination.Id, out checker))
+            Queue<string> chatHistory;
+            if (_clientsProperties._chatsByHistory.TryGetValue(messageDestination.Id, out chatHistory))
             {
-                while (checker.Count > 0)
+                while (chatHistory.Count > 0)
                 {
-                    _displayer.Print((checker.Dequeue()));
+                    _displayer.Print((chatHistory.Dequeue()));
                 }
             }
-            _displayer.Print("Enter message to send");
+            _displayer.Print("Enter message to send - enter 'exit' to end");
             while ((messagetosend = Console.ReadLine()) != "exit")
             {
                 Message<string> newmessage = new Message<string>(messagetosend, _clientsProperties.User, msgType, messageDestination);
                 byte[] bytes = serializations.ObjectToByteArray(newmessage);
                 _clientsProperties.client.GetStream().Write(bytes, 0, bytes.Length);
-                _displayer.Print("Enter message to send");
             }
             _clientsProperties.currentChat = null;
         }
@@ -110,9 +107,9 @@ namespace Kashkeshet.Clients
                 _clientsProperties.currentChat = _clientsProperties._chats.FirstOrDefault();
                 SendTextMessage(MessageType.Text, _clientsProperties._chats.FirstOrDefault());
             }
-            catch(Exception)
+            catch (Exception e)
             {
-                _displayer.Print("Couldnt Get Chats........"+_clientsProperties._chats.Count);
+                _displayer.Print(e.ToString());
             }
 
         }
@@ -125,9 +122,8 @@ namespace Kashkeshet.Clients
             string destination;
             while ((destination = Console.ReadLine()) != "exit")
                 desinations.Add(destination);
-
             IChat chat = IsChatExist(desinations, ChatTypes.Group);
-            if(chat==null)
+            if (chat == null)
                 chat = CreateNewChat(new DestinationUser(desinations), ChatTypes.Group);
             SendTextMessage(MessageType.TextToDest, chat);
             _clientsProperties.currentChat = chat;
@@ -136,21 +132,21 @@ namespace Kashkeshet.Clients
         public void ShowActiveChats()
         {
             string st;
-            foreach (var chat in _clientsProperties._chats)
+            foreach (IChat chat in _clientsProperties._chats)
             {
                 st = "";
-                st+=("Chat ID :"+ chat.Id+" "+ chat.ChatType.ToString()+"\n");
+                st += ("Chat ID :" + chat.Id + " " + chat.ChatType.ToString() + "\n");
 
                 st += ("With : ");
-                foreach (var i in chat.Destination.Get())
+                foreach (string i in chat.Destination.Get())
                 {
-                    st += (i+" ");
+                    st += (i + " ");
                 }
                 _displayer.Print(st);
             }
-            
+
         }
 
 
     }
-    }
+}

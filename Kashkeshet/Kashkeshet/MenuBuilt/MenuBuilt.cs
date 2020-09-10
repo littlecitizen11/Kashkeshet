@@ -22,8 +22,7 @@ namespace Kashkeshet
             Menu<int> menu = new Menu<int>();
             menu.AddOption(1, "Send global text", _send.SendGlobalMessage);
             menu.AddOption(2, "Send Private Message", _send.SendPrivateMessage);
-            menu.AddOption(3, "Send Message to Group", _send.SendGroupMessage);
-            menu.AddOption(4, "Show active chats", _send.ShowActiveChats);
+            menu.AddOption(3, "Show active chats", _send.ShowActiveChats);
             RunIntMenu intMenu = new RunIntMenu();
             intMenu.Menu = menu;
             intMenu.Run();

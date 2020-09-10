@@ -24,34 +24,31 @@ namespace Kashkeshet.Clients
         }
         public void ReceiveFirstData()
         {
-            byte[] receivedBytes = new byte[8192];
+            // runs synchronious receiving - online users and global chat
+            byte[] receivedBytes = new byte[_clientsProperties.client.ReceiveBufferSize];
             _clientsProperties.client.GetStream().Read(receivedBytes, 0, receivedBytes.Length);
             receiveTypes.ReceiveGetOnlineClients((IMessage)serializations.ByteArrayToObject(receivedBytes));
-            receivedBytes = new byte[8192];
+            receivedBytes = new byte[_clientsProperties.client.ReceiveBufferSize];
             _clientsProperties.client.GetStream().Read(receivedBytes, 0, receivedBytes.Length);
             receiveTypes.ReceiveCreateChat((IMessage)serializations.ByteArrayToObject(receivedBytes));
         }
         public void Receive()
         {
-            byte[] receivedBytes = new byte[8192];
-            _clientsProperties.client.GetStream().Flush();
-            _clientsProperties.client.NoDelay = false;
-            _clientsProperties.client.Client.NoDelay = false;
+            byte[] receivedBytes = new byte[_clientsProperties.client.ReceiveBufferSize];
+  
             try
             {
                 while ((_clientsProperties.client.GetStream().Read(receivedBytes, 0, receivedBytes.Length)) > 0)
                 {
-                    var data = (IMessage)serializations.ByteArrayToObject(receivedBytes);
-                    Console.WriteLine("type "+data.MessageType);
+                    IMessage data = (IMessage)serializations.ByteArrayToObject(receivedBytes);
                     Task t = new Task(() =>
                     receiveTypes.GetType().GetMethod("Receive" + data.MessageType).Invoke(receiveTypes, new[] { data }));
                     t.Start();
                     _clientsProperties.client.GetStream().Flush();
-                    _clientsProperties.client.NoDelay = false;
-                    _clientsProperties.client.Client.NoDelay = false;
-                    receivedBytes = new byte[8192];
-/*                    t.Wait();
-                    t.Dispose();*/
+                    _clientsProperties.client.NoDelay = true;
+                    _clientsProperties.client.Client.NoDelay = true;
+                    receivedBytes = new byte[_clientsProperties.client.ReceiveBufferSize];
+
                 }
             }
             catch (Exception e)

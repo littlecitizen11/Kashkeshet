@@ -64,7 +64,7 @@ namespace Kashkeshet
                 _sender = new SendData(ref _clientProperties, new Displayer());
                 Thread thread;
                 _sender.SendUser();
-                ReceiveData receiveData = new ReceiveData(ref _clientProperties, new Displayer());
+                ReceiveData receiveData = new ReceiveData(ref _clientProperties, new Displayer()); // runs synchronious receiving
                 thread = new Thread(() => receiveData.Receive()); //thread that receiving data in background all the time
                 thread.Start();
                 thread.IsBackground = true;

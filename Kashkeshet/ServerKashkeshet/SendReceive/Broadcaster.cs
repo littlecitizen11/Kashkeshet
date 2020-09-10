@@ -13,7 +13,6 @@ namespace ServerKashkeshet
         }
         public void Broadcast(byte[] bytes, Dictionary<TcpClient, string> clients)
         {
-            Console.WriteLine("number of clients "+clients.Count);
             Parallel.ForEach(clients.Keys, (client) =>
                 {
                     if (client.Connected)

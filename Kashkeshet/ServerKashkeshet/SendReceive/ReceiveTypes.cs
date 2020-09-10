@@ -33,7 +33,6 @@ namespace ServerKashkeshet
         public void ReceiveText(IMessage data)
         {
             Message<string> dataConvert = (Message<string>)data;
-            Console.WriteLine(dataConvert.ClientUser.UserName+" : "+dataConvert.ClientMessage);
             _broadcaster.Broadcast(_serializations.ObjectToByteArray(data),_clients);
         }
         public void ReceiveImage(IMessage data)
@@ -44,22 +43,19 @@ namespace ServerKashkeshet
         public void ReceiveTextToDest(IMessage data)
         {
             Message<string> dataConvert = (Message<string>)data;
-            Console.WriteLine("PRIVATE - "+dataConvert.ClientUser.UserName + " : " + dataConvert.ClientMessage);
-
             byte[] bytes = new byte[_client.ReceiveBufferSize];
             bytes = _serializations.ObjectToByteArray(data);
             try
             {
-                Dictionary<TcpClient, string> check = new Dictionary<TcpClient, string>();
+                Dictionary<TcpClient, string> clientToSend = new Dictionary<TcpClient, string>();
                 foreach (string item in dataConvert.MessageDestination.Destination.Get())
                 {
-                    check.Add(_clients.FirstOrDefault(x=>x.Value==item).Key, item);
+                    clientToSend.Add(_clients.FirstOrDefault(x=>x.Value==item).Key, item);
                 }
-                _broadcaster.Broadcast(bytes,check);
+                _broadcaster.Broadcast(bytes, clientToSend);
             }
             catch (Exception)
             {
-                Console.WriteLine("User might not exist");
                 Message<string> ErrorBack = new Message<string>("User might not exist", new User("Server"), MessageType.Text);
                 byte[] byteerr = new byte[_client.ReceiveBufferSize];
                 byteerr = _serializations.ObjectToByteArray(ErrorBack);
@@ -85,13 +81,13 @@ namespace ServerKashkeshet
             if (!_chats.Contains(message.ClientMessage))
                 _chats.Add(message.ClientMessage);
 
-            Dictionary<TcpClient, string> check = new Dictionary<TcpClient, string>();
+            Dictionary<TcpClient, string> clientToSend = new Dictionary<TcpClient, string>();
             foreach (string item in message.ClientMessage.Destination.Get())
             {
                 if(_clients.ContainsValue(item))
-                    check.Add(_clients.FirstOrDefault(x => x.Value == item).Key, item);
+                    clientToSend.Add(_clients.FirstOrDefault(x => x.Value == item).Key, item);
             }
-            _broadcaster.Broadcast(bytes,check);
+            _broadcaster.Broadcast(bytes, clientToSend);
 
         }
         

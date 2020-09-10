@@ -30,11 +30,11 @@ namespace Kashkeshet.Clients
             {
                 //those linq are for check either an Id exists in chats field and changing the value of chatsbyhistory by the Id
                 _clientsProperties._chats[_clientsProperties._chats.IndexOf(_clientsProperties._chats.Find(x => x.Id == dataConvert.ClientMessage.Id))] = dataConvert.ClientMessage;
-                var a = _clientsProperties._chatsByHistory[_clientsProperties._chatsByHistory.Keys.ToList()[_clientsProperties._chats.IndexOf(_clientsProperties._chats.Find(x => x.Id == dataConvert.ClientMessage.Id))]];
+                Queue<string> elementToUpdate = _clientsProperties._chatsByHistory[_clientsProperties._chatsByHistory.Keys.ToList()[_clientsProperties._chats.IndexOf(_clientsProperties._chats.Find(x => x.Id == dataConvert.ClientMessage.Id))]];
                 lock (_lock)
                 {
                     _clientsProperties._chatsByHistory.Remove(_clientsProperties._chatsByHistory.Keys.ToList()[_clientsProperties._chats.IndexOf(_clientsProperties._chats.Find(x => x.Id == dataConvert.ClientMessage.Id))]);
-                    _clientsProperties._chatsByHistory.Add(dataConvert.ClientMessage.Id, a);
+                    _clientsProperties._chatsByHistory.Add(dataConvert.ClientMessage.Id, elementToUpdate);
                 }
 
             }
