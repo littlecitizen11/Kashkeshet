@@ -19,6 +19,8 @@ namespace ServerKashkeshet
         private TcpClient _client;
         private Dictionary<TcpClient, string> _clients;
         private List<IChat> _chats;
+        private Broadcaster _broadcaster = new Broadcaster();
+
 
 
         public ReceiveTypes(TcpClient client, Dictionary<TcpClient, string> clients, List<IChat> chats)
@@ -31,9 +33,8 @@ namespace ServerKashkeshet
         public void ReceiveText(IMessage data)
         {
             Message<string> dataConvert = (Message<string>)data;
-            Console.WriteLine(" {0} : {1}", dataConvert.ClientUser.UserName, dataConvert.ClientMessage);
-            Broadcaster br = new Broadcaster(_clients);
-            br.Broadcast(_serializations.ObjectToByteArray(data));
+            Console.WriteLine(dataConvert.ClientUser.UserName+" : "+dataConvert.ClientMessage);
+            _broadcaster.Broadcast(_serializations.ObjectToByteArray(data),_clients);
         }
         public void ReceiveImage(IMessage data)
         {
@@ -43,7 +44,7 @@ namespace ServerKashkeshet
         public void ReceiveTextToDest(IMessage data)
         {
             Message<string> dataConvert = (Message<string>)data;
-            Console.WriteLine("PRIVATE {0} : {1}", dataConvert.ClientUser.UserName, dataConvert.ClientMessage);
+            Console.WriteLine("PRIVATE - "+dataConvert.ClientUser.UserName + " : " + dataConvert.ClientMessage);
 
             byte[] bytes = new byte[_client.ReceiveBufferSize];
             bytes = _serializations.ObjectToByteArray(data);
@@ -54,8 +55,7 @@ namespace ServerKashkeshet
                 {
                     check.Add(_clients.FirstOrDefault(x=>x.Value==item).Key, item);
                 }
-                Broadcaster br = new Broadcaster(check);
-                br.Broadcast(bytes);
+                _broadcaster.Broadcast(bytes,check);
             }
             catch (Exception)
             {
@@ -88,11 +88,10 @@ namespace ServerKashkeshet
             Dictionary<TcpClient, string> check = new Dictionary<TcpClient, string>();
             foreach (string item in message.ClientMessage.Destination.Get())
             {
-                Console.WriteLine("item" +item);
-                check.Add(_clients.FirstOrDefault(x => x.Value == item).Key, item);
+                if(_clients.ContainsValue(item))
+                    check.Add(_clients.FirstOrDefault(x => x.Value == item).Key, item);
             }
-            Broadcaster br = new Broadcaster(check);
-            br.Broadcast(bytes);
+            _broadcaster.Broadcast(bytes,check);
 
         }
         

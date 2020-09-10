@@ -2,30 +2,25 @@
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ServerKashkeshet
 {
     public class Broadcaster
     {
-        private object _lock = new object();
-        private Dictionary<TcpClient, string> _clients;
-
-        public Broadcaster(Dictionary<TcpClient, string> clients)
+        public Broadcaster()
         {
-            _clients = clients;
         }
-        public void Broadcast(byte[] bytes)
+        public void Broadcast(byte[] bytes, Dictionary<TcpClient, string> clients)
         {
-            lock (_lock)
-            {
-                foreach (TcpClient c in _clients.Keys)
+            Console.WriteLine("number of clients "+clients.Count);
+            Parallel.ForEach(clients.Keys, (client) =>
                 {
-                    if (c.Connected)
+                    if (client.Connected)
                     {
-                        c.GetStream().Write(bytes, 0, bytes.Length);
+                        client.GetStream().Write(bytes, 0, bytes.Length);
                     }
-                }
-            }
+                });
         }
     }
 }

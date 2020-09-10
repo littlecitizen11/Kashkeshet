@@ -1,4 +1,5 @@
-﻿using MenuBuilder;
+﻿using Kashkeshet.Clients;
+using MenuBuilder;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,17 +11,19 @@ namespace Kashkeshet
         /// <summary>
         /// Add Option by the client Actions
         /// </summary>
-        private readonly Client _client;
-        public MenuBuilt(Client client)
+        //private readonly Client _client;
+        private readonly SendData _send;
+        public MenuBuilt(SendData send)
         {
-            _client = client;
+            _send = send;
         }
         public void Execute()
         {
             Menu<int> menu = new Menu<int>();
-            menu.AddOption(1, "Send global text", _client.SendGlobalMessage);
-            menu.AddOption(2, "Send Private Message", _client.SendPrivateMessage);
-            //menu.AddOption(3, "Send Message to Group", _client.SendGroupMessage);
+            menu.AddOption(1, "Send global text", _send.SendGlobalMessage);
+            menu.AddOption(2, "Send Private Message", _send.SendPrivateMessage);
+            menu.AddOption(3, "Send Message to Group", _send.SendGroupMessage);
+            menu.AddOption(4, "Show active chats", _send.ShowActiveChats);
             RunIntMenu intMenu = new RunIntMenu();
             intMenu.Menu = menu;
             intMenu.Run();

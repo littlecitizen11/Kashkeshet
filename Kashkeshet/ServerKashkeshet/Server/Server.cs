@@ -11,9 +11,11 @@ namespace ServerKashkeshet
 {
     public class Server
     {
+        
         static readonly object _lock = new object();
         static readonly Dictionary<TcpClient, string> _connectedClients = new Dictionary<TcpClient, string>();
         private Serializations serializations = new Serializations();
+        Broadcaster br = new Broadcaster();
         ILogger _logger;
         private List<IChat> _chats = new List<IChat>();
         
@@ -23,20 +25,13 @@ namespace ServerKashkeshet
             GetOnlineClients getOnlineClients = new GetOnlineClients(new List<string>());
             getOnlineClients.Clients = _connectedClients.Values.ToList();
             Message<GetOnlineClients> message = new Message<GetOnlineClients>(getOnlineClients, null, MessageType.GetOnlineClients);
-            Broadcaster br = new Broadcaster(_connectedClients);
-            br.Broadcast(serializations.ObjectToByteArray(message));
+            br.Broadcast(serializations.ObjectToByteArray(message), _connectedClients);
         }
         public void CurrentGlobalChat()
         {
-            Message<Chat> message = new Message<Chat>((Chat)_chats[0], null, MessageType.CreateChat);
-            Broadcaster br = new Broadcaster(_connectedClients);
-            foreach (TcpClient c in _connectedClients.Keys)
-            {
-                if (c.Connected)
-                {
-                    c.GetStream().Write(serializations.ObjectToByteArray(message), 0, serializations.ObjectToByteArray(message).Length);
-                }
-            }
+            Message<Chat> message = new Message<Chat>((Chat)_chats[0], null, MessageType.CreateChat);            
+            br.Broadcast(serializations.ObjectToByteArray(message), _connectedClients);
+
         }
         public void GetUserName(TcpClient _client)
         {
@@ -50,7 +45,7 @@ namespace ServerKashkeshet
                 _chats[0].Destination = new DestinationGlobal(_connectedClients.Values.ToList());
                 SendOnlineClients();
                 CurrentGlobalChat();
-                Task.Delay(100);
+
             }
             catch (Exception e)
             {
@@ -72,11 +67,8 @@ namespace ServerKashkeshet
                     TcpClient client = server.AcceptTcpClient();
                     Task t = Task.Factory.StartNew(() =>
                     {
-                        using (NetworkStream networkStream = client.GetStream())
-                        {
-                            GetUserName(client);
-                            new ReceiveData(client, _connectedClients, serializations,_chats);
-                        }
+                         GetUserName(client);
+                         new ReceiveData(client, _connectedClients, serializations,_chats);
                         _logger.Information("{0} disconnected", _connectedClients[client]);
                         lock (_lock)
                         {

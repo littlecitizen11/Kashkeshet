@@ -9,6 +9,7 @@ namespace Kashkeshet
         {
             Client c = new Client();
             c.StartClient();
+            Console.Read();
         }
     }
 }

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Sockets;
-
+using System.Threading.Tasks;
 
 namespace ServerKashkeshet
 {
@@ -22,21 +22,31 @@ namespace ServerKashkeshet
         }
         public void Receive()
         {
-            NetworkStream _networkStream = _client.GetStream();
-            _networkStream.Flush();
-            var receivedBytes = new byte[_client.ReceiveBufferSize];
+            var receivedBytes = new byte[8192];
             int byte_count;
             try
             {
+                NetworkStream _networkStream = _client.GetStream();
+                _client.GetStream().Flush();
+                _client.NoDelay = true;
+                _client.Client.NoDelay = true;
+                _networkStream.Flush();
                 while ((byte_count = _networkStream.Read(receivedBytes, 0, receivedBytes.Length)) > 0)
                 {
                     IMessage data = (IMessage)_serializations.ByteArrayToObject(receivedBytes);
                     ReceiveTypes receiveTypes = new ReceiveTypes(_client,_clients,_chats);
-                    receiveTypes.GetType().GetMethod("Receive" + data.MessageType).Invoke(receiveTypes, new[] { data });
-                    byte[] bytes = new byte[_client.ReceiveBufferSize];
+                    Task t = new Task(() =>
+                    receiveTypes.GetType().GetMethod("Receive" + data.MessageType).Invoke(receiveTypes, new[] { data }));
+                    t.RunSynchronously();
+                    _client.GetStream().Flush();
+                    _client.NoDelay = true;
+                    _client.Client.NoDelay = true;
+                    receivedBytes = new byte[8192];
+                    t.Wait();
+                    t.Dispose();
+                    byte[] bytes = new byte[8192];
                     bytes = _serializations.ObjectToByteArray(data);
                     _networkStream.Flush();
-                    receivedBytes = new byte[_client.ReceiveBufferSize];
                 }
             }
             catch (Exception e)
