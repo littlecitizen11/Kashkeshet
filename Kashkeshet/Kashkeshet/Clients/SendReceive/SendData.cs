@@ -1,13 +1,8 @@
 ﻿using Common;
-using Common.Display;
 using Common.Displayer;
-using Common.RequestMessage.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kashkeshet.Clients
 {
@@ -48,16 +43,18 @@ namespace Kashkeshet.Clients
             List<string> listofprivates = new List<string>();
             PrintClients();
             _displayer.Print("Enter From List");
-            listofprivates.Add(Console.ReadLine());
-            listofprivates.Add(_clientsProperties.User.UserName);
-            IChat chat = IsChatExist(listofprivates, ChatTypes.Private);
-            if (chat == null)
+            string clientToSend;
+            while((clientToSend=Console.ReadLine())==null||!_clientsProperties._clients.Contains(clientToSend)|| clientToSend==_clientsProperties.User.UserName)
             {
-                chat = CreateNewChat(new DestinationUser(listofprivates), ChatTypes.Private);
+                _displayer.Print("Wrong value");
             }
+            listofprivates.Add(clientToSend);
+            listofprivates.Add(_clientsProperties.User.UserName);
+            IChat chat;
+            if((chat=IsChatExist(listofprivates,ChatTypes.Private))==null)
+                chat = CreateNewChat(new DestinationUser(listofprivates), ChatTypes.Private);
             _clientsProperties.currentChat = chat;
             SendTextMessage(MessageType.TextToDest, chat);
-
         }
         public void SendTextMessage(MessageType msgType, IChat messageDestination)
         {
@@ -85,7 +82,7 @@ namespace Kashkeshet.Clients
         {
             foreach (IChat chat in _clientsProperties._chats)
             {
-                if (chat.Destination.Get().Any(destination.Contains) && chat.ChatType == chatType)
+                if (((chat.Destination.Get().Intersect(destination)).Count()==destination.Count()) && chat.ChatType == chatType)
                     return chat;
             }
             return null;
@@ -120,13 +117,16 @@ namespace Kashkeshet.Clients
             List<string> desinations = new List<string>();
             desinations.Add(_clientsProperties.User.UserName);
             string destination;
-            while ((destination = Console.ReadLine()) != "exit")
+            while ((destination = Console.ReadLine()) != "exit"&&_clientsProperties._clients.Contains(destination)&&destination!=_clientsProperties.User.UserName)
+            {
                 desinations.Add(destination);
-            IChat chat = IsChatExist(desinations, ChatTypes.Group);
-            if (chat == null)
+
+            }
+            IChat chat;
+            if ((chat = IsChatExist(desinations, ChatTypes.Group)) == null)
                 chat = CreateNewChat(new DestinationUser(desinations), ChatTypes.Group);
-            SendTextMessage(MessageType.TextToDest, chat);
             _clientsProperties.currentChat = chat;
+            SendTextMessage(MessageType.TextToDest, chat);
         }
 
         public void ShowActiveChats()
@@ -135,7 +135,8 @@ namespace Kashkeshet.Clients
             foreach (IChat chat in _clientsProperties._chats)
             {
                 st = "";
-                st += ("Chat ID :" + chat.Id + " " + chat.ChatType.ToString() + "\n");
+                st += "No. ["+_clientsProperties._chats.IndexOf(chat)+"] ";
+                st += (chat.ChatType.ToString() + " ");
 
                 st += ("With : ");
                 foreach (string i in chat.Destination.Get())
@@ -144,6 +145,28 @@ namespace Kashkeshet.Clients
                 }
                 _displayer.Print(st);
             }
+            _displayer.Print("enter number of chat");
+            int n;
+            while (!int.TryParse(Console.ReadLine(), out n)||n<0||_clientsProperties._chats.Count<n)
+            {
+               _displayer.Print("Incorrect value");
+            }
+            _clientsProperties.currentChat = _clientsProperties._chats[n]; 
+            switch (_clientsProperties._chats[n].ChatType)
+            {
+                case ChatTypes.Global:
+                    SendTextMessage(MessageType.Text, _clientsProperties._chats[n]);
+                    break;
+                case ChatTypes.Private:
+                    SendTextMessage(MessageType.TextToDest, _clientsProperties._chats[n]);
+                    break;
+                case ChatTypes.Group:
+                    SendTextMessage(MessageType.TextToDest, _clientsProperties._chats[n]);
+                    break;
+                default:
+                    break;
+            }
+
 
         }
 

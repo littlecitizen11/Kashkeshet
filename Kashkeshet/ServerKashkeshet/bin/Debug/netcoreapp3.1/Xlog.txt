@@ -388,3 +388,111 @@
 2020-09-10 17:59:59.233 +03:00 [INF] a disconnected
 2020-09-10 18:11:42.668 +03:00 [INF] Server Init
 2020-09-10 18:11:53.329 +03:00 [INF] a disconnected
+2020-09-10 19:23:43.850 +03:00 [INF] Server Init
+2020-09-10 19:24:59.074 +03:00 [INF] a disconnected
+2020-09-10 19:25:00.692 +03:00 [INF] b disconnected
+2020-09-10 19:26:56.827 +03:00 [INF] Server Init
+2020-09-10 19:28:58.664 +03:00 [INF] a disconnected
+2020-09-10 19:29:00.352 +03:00 [INF] b disconnected
+2020-09-10 19:41:00.328 +03:00 [INF] Server Init
+2020-09-10 19:41:48.347 +03:00 [INF] 2 disconnected
+2020-09-10 19:42:45.884 +03:00 [INF] Server Init
+2020-09-10 19:43:53.046 +03:00 [INF] Tamar disconnected
+2020-09-10 19:43:55.956 +03:00 [INF] Adani disconnected
+2020-09-10 19:54:59.197 +03:00 [INF] Server Init
+2020-09-10 19:55:31.969 +03:00 [INF] b disconnected
+2020-09-10 19:55:55.454 +03:00 [INF] Server Init
+2020-09-10 19:56:40.597 +03:00 [INF] a disconnected
+2020-09-10 19:57:42.652 +03:00 [INF] Server Init
+2020-09-10 19:59:46.297 +03:00 [INF] Server Init
+2020-09-10 20:00:17.832 +03:00 [INF] b disconnected
+2020-09-10 20:04:47.887 +03:00 [INF] Server Init
+2020-09-10 20:05:07.254 +03:00 [INF] 1 disconnected
+2020-09-10 20:05:08.902 +03:00 [ERR] System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host..
+ ---> System.Net.Sockets.SocketException (10054): An existing connection was forcibly closed by the remote host.
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at ServerKashkeshet.Server.GetUserName(TcpClient _client) in C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\Server\Server.cs:line 41
+2020-09-10 20:05:46.678 +03:00 [INF] Server Init
+2020-09-10 20:05:57.531 +03:00 [INF] 3 disconnected
+2020-09-10 20:08:08.637 +03:00 [INF] Server Init
+2020-09-10 20:08:27.749 +03:00 [INF] f disconnected
+2020-09-10 20:08:28.293 +03:00 [ERR] System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host..
+ ---> System.Net.Sockets.SocketException (10054): An existing connection was forcibly closed by the remote host.
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at ServerKashkeshet.Server.GetUserName(TcpClient _client) in C:\Code\Kashkeshet\Kashkeshet\ServerKashkeshet\Server\Server.cs:line 41
+2020-09-10 20:08:54.593 +03:00 [INF] Server Init
+2020-09-10 20:10:26.723 +03:00 [INF] Server Init
+2020-09-10 20:10:37.811 +03:00 [INF] 3 disconnected
+2020-09-10 20:10:56.428 +03:00 [INF] Server Init
+2020-09-10 20:12:17.130 +03:00 [INF] Server Init
+2020-09-10 20:13:10.272 +03:00 [INF] Server Init
+2020-09-10 20:16:22.982 +03:00 [INF] Server Init
+2020-09-10 20:16:35.593 +03:00 [INF] a disconnected
+2020-09-10 20:16:45.823 +03:00 [INF] b disconnected
+2020-09-10 20:16:47.274 +03:00 [INF] c disconnected
+2020-09-10 20:17:55.762 +03:00 [INF] Server Init
+2020-09-10 20:18:17.972 +03:00 [INF] c disconnected
+2020-09-10 20:18:58.607 +03:00 [INF] d disconnected
+2020-09-10 20:19:35.381 +03:00 [INF] a disconnected
+2020-09-10 20:20:12.053 +03:00 [INF] b disconnected
+2020-09-10 20:23:11.588 +03:00 [INF] Server Init
+2020-09-10 20:23:32.417 +03:00 [INF] a disconnected
+2020-09-10 20:24:02.474 +03:00 [INF] b disconnected
+2020-09-10 20:27:55.775 +03:00 [INF] Server Init
+2020-09-10 20:28:17.256 +03:00 [INF] a disconnected
+2020-09-10 20:28:26.903 +03:00 [INF] b disconnected
+2020-09-10 20:28:56.958 +03:00 [INF] 2 disconnected
+2020-09-10 20:29:03.253 +03:00 [INF] 1 disconnected
+2020-09-10 20:56:01.639 +03:00 [INF] Server Init
+2020-09-10 20:56:20.950 +03:00 [INF] a disconnected
+2020-09-10 20:56:22.420 +03:00 [INF] b disconnected
+2020-09-10 21:03:40.689 +03:00 [INF] Server Init
+2020-09-10 21:04:47.663 +03:00 [INF] 2 disconnected
+2020-09-10 21:04:48.894 +03:00 [INF] 1 disconnected
+2020-09-10 21:06:12.963 +03:00 [INF] Server Init
+2020-09-10 21:08:03.749 +03:00 [INF] c disconnected
+2020-09-10 21:08:04.901 +03:00 [INF] b disconnected
+2020-09-10 21:08:06.108 +03:00 [INF] a disconnected
+2020-09-10 21:09:05.437 +03:00 [INF] Server Init
+2020-09-10 21:09:52.321 +03:00 [INF] 3 disconnected
+2020-09-10 21:09:53.762 +03:00 [INF] 2 disconnected
+2020-09-10 21:09:55.081 +03:00 [INF] 1 disconnected
+2020-09-10 21:13:39.236 +03:00 [INF] Server Init
+2020-09-10 21:14:39.426 +03:00 [INF] 3 disconnected
+2020-09-10 21:14:40.262 +03:00 [INF] 2 disconnected
+2020-09-10 21:14:41.440 +03:00 [INF] 1 disconnected
+2020-09-10 21:43:18.350 +03:00 [INF] Server Init
+2020-09-10 21:44:17.549 +03:00 [INF] 1 disconnected
+2020-09-10 21:44:23.564 +03:00 [INF] Server Init
+2020-09-10 21:45:13.429 +03:00 [INF] a disconnected
+2020-09-10 21:45:14.054 +03:00 [INF] q disconnected
+2020-09-10 21:46:30.083 +03:00 [INF] Server Init
+2020-09-10 21:47:19.264 +03:00 [INF] b disconnected
+2020-09-10 21:47:20.712 +03:00 [INF] h disconnected
+2020-09-10 21:49:52.307 +03:00 [INF] Server Init
+2020-09-10 21:50:31.038 +03:00 [INF] 2 disconnected
+2020-09-10 21:50:32.645 +03:00 [INF] 1 disconnected
+2020-09-10 22:35:38.430 +03:00 [INF] Server Init
+2020-09-10 22:35:45.911 +03:00 [INF] Server Init
+2020-09-10 22:36:31.623 +03:00 [INF] 2 disconnected
+2020-09-10 22:36:32.791 +03:00 [INF] 1 disconnected
+2020-09-10 22:39:26.148 +03:00 [INF] Server Init
+2020-09-10 22:40:23.365 +03:00 [INF] 2 disconnected
+2020-09-10 22:40:24.652 +03:00 [INF] 1 disconnected
+2020-09-10 22:50:16.349 +03:00 [INF] Server Init
+2020-09-10 22:50:26.177 +03:00 [INF] 1 disconnected
+2020-09-10 22:51:04.893 +03:00 [INF] 2 disconnected
+2020-09-10 22:51:06.316 +03:00 [INF] 1 disconnected
+2020-09-10 22:53:13.234 +03:00 [INF] Server Init
+2020-09-10 22:54:14.906 +03:00 [INF] 1 disconnected
+2020-09-10 22:54:16.163 +03:00 [INF] 3 disconnected
+2020-09-10 22:54:16.889 +03:00 [INF] 2 disconnected
+2020-09-10 22:54:17.665 +03:00 [INF] 4 disconnected
+2020-09-10 22:58:32.755 +03:00 [INF] Server Init
+2020-09-10 22:59:33.164 +03:00 [INF] 3 disconnected
+2020-09-10 22:59:34.999 +03:00 [INF] 2 disconnected
+2020-09-10 22:59:36.380 +03:00 [INF] 1 disconnected

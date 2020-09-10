@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Common
+﻿namespace Common
 {
     public enum MessageType
     {
@@ -11,7 +7,6 @@ namespace Common
         Image,
         TextToDest,
         GetOnlineClients,
-        TextToGroup,
         GlobalChat,
         GetChat,
         CreateChat

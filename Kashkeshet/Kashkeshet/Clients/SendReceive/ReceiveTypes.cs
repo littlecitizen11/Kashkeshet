@@ -3,11 +3,7 @@ using Common.Displayer;
 using Common.RequestMessage.Types;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Net.Sockets;
-using System.Text;
 
 namespace Kashkeshet.Clients
 {
@@ -28,7 +24,7 @@ namespace Kashkeshet.Clients
 
             if (_clientsProperties._chats.Select(x => x.Id).Contains(dataConvert.ClientMessage.Id))
             {
-                //those linq are for check either an Id exists in chats field and changing the value of chatsbyhistory by the Id
+                //those linq are for check either an Id exists in _chats field and changing the value of chatsbyhistory by the Id
                 _clientsProperties._chats[_clientsProperties._chats.IndexOf(_clientsProperties._chats.Find(x => x.Id == dataConvert.ClientMessage.Id))] = dataConvert.ClientMessage;
                 Queue<string> elementToUpdate = _clientsProperties._chatsByHistory[_clientsProperties._chatsByHistory.Keys.ToList()[_clientsProperties._chats.IndexOf(_clientsProperties._chats.Find(x => x.Id == dataConvert.ClientMessage.Id))]];
                 lock (_lock)
@@ -36,7 +32,6 @@ namespace Kashkeshet.Clients
                     _clientsProperties._chatsByHistory.Remove(_clientsProperties._chatsByHistory.Keys.ToList()[_clientsProperties._chats.IndexOf(_clientsProperties._chats.Find(x => x.Id == dataConvert.ClientMessage.Id))]);
                     _clientsProperties._chatsByHistory.Add(dataConvert.ClientMessage.Id, elementToUpdate);
                 }
-
             }
             else
             {
@@ -58,7 +53,6 @@ namespace Kashkeshet.Clients
 
 
         }
-
         public void ReceiveText(IMessage data)
         {
             Message<string> convertData = (Message<string>)data;

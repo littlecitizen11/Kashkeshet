@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Serilog;
-using System;
+using ServerKashkeshet.Server;
 
 namespace ServerKashkeshet
 {
@@ -8,7 +8,7 @@ namespace ServerKashkeshet
     {
         static void Main(string[] args)
         {
-            Server s = new Server();
+            ServerKishKush s = new ServerKishKush();
             IConfiguration configSerilog = new ConfigurationBuilder()
 .AddJsonFile("appsettings.json", true, true)
 .Build();

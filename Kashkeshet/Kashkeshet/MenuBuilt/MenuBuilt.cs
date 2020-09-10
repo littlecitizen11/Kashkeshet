@@ -20,9 +20,11 @@ namespace Kashkeshet
         public void Execute()
         {
             Menu<int> menu = new Menu<int>();
-            menu.AddOption(1, "Send global text", _send.SendGlobalMessage);
+            menu.AddOption(1, "Enter Global Chat", _send.SendGlobalMessage);
             menu.AddOption(2, "Send Private Message", _send.SendPrivateMessage);
-            menu.AddOption(3, "Show active chats", _send.ShowActiveChats);
+            menu.AddOption(3, "Send Group Message", _send.SendGroupMessage);
+            menu.AddOption(4, "Show Active Chats", _send.ShowActiveChats);
+
             RunIntMenu intMenu = new RunIntMenu();
             intMenu.Menu = menu;
             intMenu.Run();

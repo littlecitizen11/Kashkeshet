@@ -2,9 +2,6 @@
 using Common.Display;
 using Common.Displayer;
 using System;
-using System.Collections.Generic;
-using System.Net.Sockets;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Kashkeshet.Clients
@@ -24,7 +21,7 @@ namespace Kashkeshet.Clients
         }
         public void ReceiveFirstData()
         {
-            // runs synchronious receiving - online users and global chat
+            // runs synchronious receiving - online users and global chat - ensure receiving
             byte[] receivedBytes = new byte[_clientsProperties.client.ReceiveBufferSize];
             _clientsProperties.client.GetStream().Read(receivedBytes, 0, receivedBytes.Length);
             receiveTypes.ReceiveGetOnlineClients((IMessage)serializations.ByteArrayToObject(receivedBytes));
@@ -44,9 +41,6 @@ namespace Kashkeshet.Clients
                     Task t = new Task(() =>
                     receiveTypes.GetType().GetMethod("Receive" + data.MessageType).Invoke(receiveTypes, new[] { data }));
                     t.Start();
-                    _clientsProperties.client.GetStream().Flush();
-                    _clientsProperties.client.NoDelay = true;
-                    _clientsProperties.client.Client.NoDelay = true;
                     receivedBytes = new byte[_clientsProperties.client.ReceiveBufferSize];
 
                 }
